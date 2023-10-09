@@ -6,17 +6,16 @@
 // 1 2 3 4
 // 2 3 4 5
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+int[,] CreateMatrixSumIndex(int rows, int columns)
 {
-    //                        0      1
     int[,] matrix = new int[rows, columns];
-    Random rnd = new Random();
+    //Random rnd = new Random();
 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rnd.Next(min, max + 1);
+            matrix[i, j] = i + j;
         }
     }
 
@@ -37,5 +36,5 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] array2d = CreateMatrixRndInt(3, 4, -100, 100);
-PrintMatrix(array2d);
+int[,] arraySum = CreateMatrixSumIndex(3, 4);
+PrintMatrix(arraySum);
